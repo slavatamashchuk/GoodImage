@@ -69,10 +69,7 @@ def draw():
             if logoend==False:
                 fill (0)
                 background(255)
-#                if onestartsound==True:
-#                    onestartsound=False
                 logoend=True
-#                startsound.play()
             else:
                 if paint==True:
                     circle (mouseX, mouseY, Radius)
@@ -114,43 +111,6 @@ def keyPressed():
     global Green
     global quare
     global WhatColor   
-    
-    if keyCode==86: #v
-        print "                version menu"
-        print ""
-        print "                  s0.0.1.1"
-        print ""
-        print ""
-        print "         Added coustumise of color"
-        print ""
-        print "                  s0.0.1.2"
-        print ""
-        print ""
-        print "            Added save funktion"
-        print ""
-        print "                  s0.0.1.3"
-        print ""
-        print ""
-        print "         fixed error in help menu"
-        print "      the optimised size of the program" 
-        print ""
-        print "                  s0.0.1.4"
-        print ""
-        print ""
-        print "     changed max radius of drawings circle"
-        print ""
-        print "                  s0.0.1.5"
-        print ""
-        print ""
-        print "         deleted old square funktion"
-        print "          added new square funktion"
-        print "      the optimised size of the program"
-        print ""
-        print "                  s0.0.1.6" 
-        print ""
-        print ""
-        print "           fixed error in help menu"
-        print ""
         
     if keyCode==38:
         Radius+=2
@@ -217,8 +177,7 @@ def keyPressed():
         print "for coler select press '1-9'"
         print "for erasederased press '0'"
         print "for big full stup or smol full stap press 'arrow top', 'arrow outside'"
-        print "for 'version menu' press 'v'"
-        print "for square mode press 'q', for don't quare mode prees 'random key'"
+        print "for painting square press 'q', for don't painting quare prees 'random key'"
         print ""
     
     
@@ -226,23 +185,19 @@ def keyPressed():
         quare=True
     else:
         quare=False
-    if keyCode==69: #e
-        elips=True
-    else:
-        elips=False
         
-    if keyCode==82:
+    if keyCode==82: #r
         WhatColor="Red"
         print "Your costum color is Red"
     if keyCode==71:
-        WhatColor="Green"
+        WhatColor="Green" #g
         print "Your costum color is Green"
     if keyCode==66:
-        WhatColor="Blue"
+        WhatColor="Blue" #b
         print "Your costum color is Blue"
 
         
-    if keyCode==37:
+    if keyCode==37: 
         if WhatColor=="Red":
             Red-=1
         if WhatColor=="Green":
@@ -258,8 +213,8 @@ def keyPressed():
             Blue+=1
             
     
-    if keyCode==83:
-        saveFrame("####################################################################################################.png")
+    if keyCode==83: #s
+        saveFrame("YourGoodImages/####################################################################################################.png")
         print "image was save"
     
 
