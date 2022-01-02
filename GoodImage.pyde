@@ -208,9 +208,9 @@ def keyPressed():
         if WhatColor=="Red":
             Red+=1
         if WhatColor=="Green":
-            Green+=1
-        if WhatColor=="Blue":
             Blue+=1
+        if WhatColor=="Blue":
+            Green+=1
             
     
     if keyCode==83: #s
