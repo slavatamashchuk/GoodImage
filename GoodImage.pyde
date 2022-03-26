@@ -20,19 +20,21 @@ onestartsound=True
 
 loadingprogress=0
 
+saveformat=None
+
 def setup():
     global Width
     global Height
-    print "                                   "
-    print "    ########             #         "
-    print "  ##        #            #         "
-    print " #                       #         "
-    print " #      ######           #         "
-    print "  ###     ####           #         "
-    print "    #######   OOD        # MAGE    "
-    print "                                   "
-    print "Good program for good image        "
-    print "                                   "
+    print "                               "
+    print "    ########             #     "
+    print "  ##        #            #     "
+    print " #                       #     "
+    print " #      ######           #     "
+    print "  ###     ####           #     "
+    print "    #######   OOD        # MAGE"
+    print "                               "
+    print "Good program for good image    "
+    print "                               "
     size (Width, Height)
     background (255)
 
@@ -110,8 +112,15 @@ def keyPressed():
     global Blue
     global Green
     global quare
-    global WhatColor   
+    global WhatColor
+    global saveformat
+    
+    if keyCode==80: #p
+        saveformat="png"
         
+    if keyCode==74: #j
+        saveformat="jpg"
+    
     if keyCode==38:
         Radius+=2
         print "your radius"
@@ -166,20 +175,6 @@ def keyPressed():
         Red=255
         Blue=255
         Green=255
-
-    
-    if keyCode==72: #h
-        print "                         help menu"
-        print ""
-        print "for this munu press 'h'"
-        print "for painting press 'left mouse button'"
-        print "for not painting press 'mouse button'"
-        print "for coler select press '1-9'"
-        print "for erasederased press '0'"
-        print "for big full stup or smol full stap press 'arrow top', 'arrow outside'"
-        print "for painting square press 'q', for don't painting quare prees 'random key'"
-        print ""
-    
     
     if keyCode==81: #q
         quare=True
@@ -214,9 +209,18 @@ def keyPressed():
             
     
     if keyCode==83: #s
-        saveFrame("YourGoodImages/########################################################################################################################################################################################################.png")
-        print "image was save"
-    
+        if frameCount>=44:
+            if saveformat!="png" and saveformat!="jpg":
+                print "you don't chose the format of save, if you want a png format for save your image press on 'p', but if you want a jpg format for sove your image press on 'j'"
+            else:
+                if saveformat=="png":
+                    saveFrame("YourGoodImages/###########################################################################################################################################################################################################################################################.png")
+                    print "image was save"
+                else:
+                    saveFrame("YourGoodImages/###########################################################################################################################################################################################################################################################.jpg")
+                    print "image was save"
+        else:
+            print "GoodImage was loading, you can't save loading, please wait"
 
 
 def mousePressed():
